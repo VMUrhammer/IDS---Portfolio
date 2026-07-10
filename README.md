@@ -10,16 +10,16 @@ This project establishes an end-to-end data pipeline that ingests official API d
 ## System Architecture & Data Flow
 [DMI Open Data API]
 │  (Asynchronous HTTP GET Requests)
-▼
+-->
 [p5.js Cloud Ingestion Engine] (sketch.js)
 │  (JSON Parsing & Payload Tokenization)
-▼  (Secure WebSockets MQTT Stream - wss://)
+-->  (Secure WebSockets MQTT Stream - wss://)
 [Shiftr.io MQTT Broker]
 │  (Pub/Sub Topic: esp32IDS/DMI)
-▼
+-->
 [ESP32 Edge Processing Unit] (Temp_Humid_arduino.ino)
 │  (Real-Time Boundary & Absolute Variance Validation vs. DHT11 Sensor)
-▼
+-->
 [Physical Hardware / UI] (WS2812B LED Strips via FastLED)
 
 Her er den nye, opdaterede README som ét samlet stykke tekst, lige til at kopiere og sætte direkte ind i din `README.md`-fil på GitHub:
