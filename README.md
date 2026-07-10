@@ -1,11 +1,11 @@
-# IDS---Portfolio
-
-# IoT Validation Engine
+# Real-Time Cloud Data Pipeline & IoT Validation Engine
 *An Interactive Digital System (IDS) designed to bridge the gap between regional meteorological data and local micro-climate data analytics.*
 
 This project establishes an end-to-end data pipeline that ingests official API data, streams it via an MQTT broker using WebSockets, and processes it on an ESP32 edge device. The core architectural focus is enforcing strict data governance and multi-source validation to mitigate physical sensor unreliability.
 
 ---
+
+## 🏗️ System Architecture & Data Flow
 
 ## System Architecture & Data Flow
 [DMI Open Data API]
@@ -22,7 +22,11 @@ This project establishes an end-to-end data pipeline that ingests official API d
 -->
 [Physical Hardware / UI] (WS2812B LED Strips via FastLED)
 
-Her er den nye, opdaterede README som ét samlet stykke tekst, lige til at kopiere og sætte direkte ind i din `README.md`-fil på GitHub:
+Det ser ud til, at der sneg sig en lille smule af vores chat-dialog og nogle rå formateringsfejl (dobbelte overskrifter og løse kodeblokke) med ind i din tekst, da du kopierede den.
+
+Her er den absolut mest polerede, fejlfrie og fuldstændig rene version af din `README.md`. Al overflødig tekst er renset ud, diagrammet er sat i en korrekt kodeblok, så det renderes smukt på GitHub, og formateringen sidder lige i skabet.
+
+Udskift hele indholdet i din `README.md` med dette stykke tekst:
 
 ```markdown
 # Real-Time Cloud Data Pipeline & IoT Validation Engine
@@ -32,7 +36,7 @@ This project establishes an end-to-end data pipeline that ingests official API d
 
 ---
 
-## System Architecture & Data Flow
+## 🏗️ System Architecture & Data Flow
 
 
 ```
@@ -53,6 +57,8 @@ This project establishes an end-to-end data pipeline that ingests official API d
 
 ```
 
+---
+
 ## Resolving the Reliability Gap via Data Governance
 
 Low-cost edge sensors, such as the DHT11, are inherently prone to environmental "noise" caused by wind fluctuations, localized heat interference, or hardware degradation. Conversely, while professional meteorological data from DMI (Station 06180, Kastrup Lufthavn) offers high data integrity, it represents a regional macro-climate rather than the specific local micro-climate at Roskilde University (RUC).
@@ -66,12 +72,12 @@ To resolve this reliability gap, this architecture does not rely blindly on a si
 
 ## Key Technical Achievements
 
-### Asynchronous Ingestion & API Integration (`sketch.js`)
+### 🔹 Asynchronous Ingestion & API Integration (`sketch.js`)
 - **Automated Harvester:** Built an interval-driven data harvester using JavaScript's asynchronous `async/await` syntax to concurrently query live metrics from the **DMI Open Data API**.
 - **JSON Traversal:** Engineered logic to handle multi-layered API responses, dynamically extracting nested data points (`temp_dry` and `humidity`) from deep JSON object graphs.
 - **Payload Tokenization:** Optimized network bandwidth by extracting relevant metrics and compressing them into a lightweight, comma-separated string payload prior to transmission.
 
-### Advanced Parsing & State Optimization (`Temp_Humid_arduino.ino`)
+### 🔹 Advanced Parsing & State Optimization (`Temp_Humid_arduino.ino`)
 - **Asynchronous Callback Manager:** Implemented a token-based parsing mechanism using `indexOf` and `substring` to split, isolate, and cast raw incoming network strings into floating-point variables.
 - **State-Tracking Efficiency:** Implemented delta-tracking variables (`lastTemp`, `lastHumid`) to evaluate changes in environment states, successfully preventing redundant hardware processing loops.
 
